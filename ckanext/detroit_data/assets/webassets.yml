@@ -1,0 +1,14 @@
+# detroit_data-js:
+#   filter: rjsmin
+#   output: ckanext-detroit_data/%(version)s-detroit_data.js
+#   contents:
+#     - js/detroit_data.js
+#   extra:
+#     preload:
+#       - base/main
+
+# detroit_data-css:
+#   filter: cssrewrite
+#   output: ckanext-detroit_data/%(version)s-detroit_data.css
+#   contents:
+#     - css/detroit_data.css

@@ -1,0 +1,29 @@
+{% ckan_extends %}
+
+{% set promotion = h.detroit_data_get_promoted_area() %}
+
+{% block home_image %}
+  <section class="featured media-overlay hidden-xs">
+    <h2 class="media-heading">
+      {% block home_image_caption %}
+        {% if promotion["heading"] %}
+          {{ _(promotion["heading"]) }}
+        {% else %}
+          {{ _("This is a featured section") }}
+        {% endif %}
+      {% endblock %}
+    </h2>
+    {% block home_image_content %}
+      <a 
+        class="media-image" 
+        href="{%- if promotion['url'] -%} {{ promotion['url'] }} {%- else -%} # {%- endif -%}"
+      >
+        <img 
+          class="img-fluid" 
+          src="{%- if promotion['image_url'] -%} {{ promotion['image_url'] }} {%- else -%} {{ h.url_for_static('/base/images/placeholder-420x220.png') }} {%- endif -%}" 
+          alt="{%- if promotion['image_url'] -%} {%- if promotion['image_alt'] -%} {{ promotion['image_alt'] }} {%- endif -%} {%- else -%} Placeholder {%- endif -%}" 
+        />
+      </a>
+    {% endblock %}
+  </section>
+{% endblock %}

@@ -1,0 +1,34 @@
+{% ckan_extends %}
+
+{% import 'macros/form.html' as form %}
+
+{% block admin_form %}
+
+  {{ super() }}
+
+  <h3>Custom configuration options </h3>
+
+  {{ form.input('ckan.featured_orgs', id='field-ckan.featured_orgs', label=_('Featured organizations'), value=data['ckan.featured_orgs'], error=errors['ckan.featured_orgs']) }}
+
+  <h4>Promotion area</h4>
+
+  {{ form.input('ckanext.detroit_data.promoted_heading', id='field-ckanext.detroit_data.promoted_heading', label=_('Promotion heading'), value=data['ckanext.detroit_data.promoted_heading'], error=errors['ckanext.detroit_data.promoted_heading']) }}
+  {{ form.input('ckanext.detroit_data.promoted_url', id='field-ckanext.detroit_data.promoted_url', label=_('Promotion URL'), value=data['ckanext.detroit_data.promoted_url'], error=errors['ckanext.detroit_data.promoted_url']) }}
+  {{ form.input('ckanext.detroit_data.promoted_image_url', id='field-ckanext.detroit_data.promoted_image_url', label=_('Promotion image URL'), value=data['ckanext.detroit_data.promoted_image_url'], error=errors['ckanext.detroit_data.promoted_image_url']) }}
+  {{ form.input('ckanext.detroit_data.promoted_image_alt', id='field-ckanext.detroit_data.promoted_image_alt', label=_('Promotion image alternative text'), value=data['ckanext.detroit_data.promoted_image_alt'], error=errors['ckanext.detroit_data.promoted_image_alt']) }}
+
+{% endblock %}
+
+
+{% block admin_form_help %}
+
+  {{ super() }}
+
+  <p><strong>Featured organizations:</strong> A list of organization names or IDs separated by space.</p>
+
+  <p><strong>Promotion heading:</strong> Text for the promotion area.</p>
+  <p><strong>Promotion URL:</strong> A URL for the promotion area. Can either link to an internal or external page.</p>
+  <p><strong>Promotion image URL:</strong> A URL for the promotion area's image. The image should be 420 pixels by 220 pixels.</p>
+  <p><strong>Promotion image alternative text:</strong> Alternative text for the promotion area's image. Used by screen readers for people who are visually impaired.</p>
+
+{% endblock %}

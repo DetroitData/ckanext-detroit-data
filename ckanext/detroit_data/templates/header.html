@@ -1,0 +1,24 @@
+{% ckan_extends %}
+{% block header_logo %}
+  <style>
+    hgroup {
+      display: flex;
+      gap: 0.5rem;
+      align-items: center;
+    }
+  </style>
+  {% if g.site_logo %}
+    <a href="{{ h.url_for('home.index') }}">
+      <img src="{{ h.url_for_static_or_external(g.site_logo) }}" alt="{{ g.site_title }}"
+        title="{{ g.site_title }}" width="65px" height="65px" />
+    </a>
+  {% endif %}
+  <div>
+    <h1 style="float: unset; margin: 0;">
+      <a href="{{ h.url_for('home.index') }}" style="color: white;">{{ g.site_title }}</a>
+    </h1>
+    {% if g.site_description %}
+      <p style="margin: 0; color: white;">{{ g.site_description }}</p>
+    {% endif %}
+  </div>
+{% endblock %}
