@@ -1,0 +1,33 @@
+{
+  "scheming_version": 1,
+  "group_type": "category",
+  "about_url": "http://github.com/erxclau/ckanext-detroit-data",
+  "fields": [
+    {
+      "field_name": "title",
+      "label": "Name",
+      "validators": "ignore_missing unicode_safe",
+      "form_snippet": "large_text.html",
+      "form_attrs": {"data-module": "slug-preview-target"},
+      "form_placeholder": "My Category"
+    },
+    {
+      "field_name": "name",
+      "label": "URL",
+      "validators": "not_empty unicode_safe name_validator group_name_validator",
+      "form_snippet": "slug.html",
+      "form_placeholder": "my-category"
+    },
+    {
+      "field_name": "notes",
+      "label": "Description",
+      "form_snippet": "markdown.html",
+      "form_placeholder": "A little information about my category..."
+    },
+    {
+      "field_name": "url",
+      "label": "Image URL",
+      "form_placeholder": "http://example.com/my-image.jpg"
+    }
+  ]
+}
