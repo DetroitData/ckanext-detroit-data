@@ -9,7 +9,6 @@ import ckanext.detroit_data.helpers as helpers
 #     action, auth, validators
 # )
 
-
 class DetroitDataPlugin(plugins.SingletonPlugin):
     plugins.implements(plugins.IConfigurer)
     
