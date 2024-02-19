@@ -8,17 +8,17 @@ import ckan.plugins.toolkit as toolkit
 
 @toolkit.chained_helper
 def humanize_entity_type(next_helper: Callable[..., Any], entity_type: str, object_type: str, purpose: str):
-    if object_type == "category":
+    if entity_type == "group" and object_type == "category":
         if purpose == "add link":
             return toolkit._("Add Category")
         if purpose == "breadcrumb":
-            return toolkit._("Home / Categories / New")
+            return toolkit._("Categories")
         if purpose == "content tab":
             return toolkit._("Categories | Groups | Activity")
         if purpose == "create label":
             return toolkit._("Home / ... / Create Category")
         if purpose == "create title": 
-          return toolkit._("Create Category - CKAN")
+          return toolkit._("Create a Category")
         if purpose == "delete confirmation": 
           return toolkit._("Are you sure you want to delete this Category?")
         # if purpose == "description placeholder": 
@@ -43,7 +43,7 @@ def humanize_entity_type(next_helper: Callable[..., Any], entity_type: str, obje
         # if purpose == "no description": object has no description
         # if purpose == "no label": package with no organization
         if purpose == "page title": 
-          return toolkit._("Title - Categories - CKAN")
+          return toolkit._("Categories")
         if purpose == "save label":
           return toolkit._("Save Category")
         if purpose == "search placeholder": 
