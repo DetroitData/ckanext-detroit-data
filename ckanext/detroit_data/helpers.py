@@ -39,7 +39,8 @@ def humanize_entity_type(next_helper: Callable[..., Any], entity_type: str, obje
           return toolkit._("<category>")
         if purpose == "no any objects": 
            return toolkit._("There are currently no categories for this site")
-        # if purpose == "no associated label": no gorups for dataset
+        if purpose == "no associated label":
+            return toolkit._("There are no categories associated with this dataset")
         # if purpose == "no description": object has no description
         # if purpose == "no label": package with no organization
         if purpose == "page title": 
