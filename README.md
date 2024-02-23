@@ -39,7 +39,7 @@ To install ckanext-detroit-data:
 
 2. Clone the source and install it on the virtualenv
 
-    git clone https://github.com/erxclau/ckanext-detroit-data.git
+    git clone https://github.com/DetroitData/ckanext-detroit-data.git
     cd ckanext-detroit-data
     pip install -e .
     pip install -r requirements.txt
@@ -67,7 +67,7 @@ None at present
 To install ckanext-detroit-data for development, activate your CKAN virtualenv and
 do:
 
-    git clone https://github.com/erxclau/ckanext-detroit-data.git
+    git clone https://github.com/DetroitData/ckanext-detroit-data.git
     cd ckanext-detroit-data
     python setup.py develop
     pip install -r dev-requirements.txt

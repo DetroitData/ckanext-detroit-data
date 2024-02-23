@@ -1,7 +1,7 @@
 {
   "scheming_version": 1,
   "group_type": "category",
-  "about_url": "http://github.com/erxclau/ckanext-detroit-data",
+  "about_url": "http://github.com/DetroitData/ckanext-detroit-data",
   "fields": [
     {
       "field_name": "title",
