@@ -81,10 +81,20 @@ def detroit_data_get_promoted_area():
         "image_alt": config.get("ckanext.detroit_data.promoted_image_alt"),
     }
 
+def detroit_data_get_stats():
+   '''Returns statistics for the home page statistics block'''
+   stats = {}
+   stats['showcase_count'] = toolkit.get_action('package_search')({}, {"rows": 1, 'fq': '+dataset_type:showcase'})['count']
+   stats['dataset_count'] = toolkit.get_action('package_search')({}, {"rows": 1, 'fq': '!dataset_type:showcase'})['count']
+   stats['category_count'] = len(toolkit.get_action('group_list')({}, {'type': 'category'}))
+   stats['organization_count'] = len(toolkit.get_action('organization_list')({}, {}))
+   return stats
+
 
 def get_helpers():
     return { 
         'detroit_data_get_featured_organizations': detroit_data_get_featured_organizations,
         'detroit_data_get_promoted_area': detroit_data_get_promoted_area,
+        'detroit_data_get_stats': detroit_data_get_stats,
         'humanize_entity_type': humanize_entity_type
     }

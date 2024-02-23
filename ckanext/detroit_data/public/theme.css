@@ -26,3 +26,14 @@ html, body {
 .masthead .main-navbar ul li a:focus, .btn-primary:focus, .btn-primary:hover {
   background-color: var(--color-background-accent) !important;
 }
+
+.homepage .module-stats .card ul {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(min(150px, 100%), 1fr));
+  font-size: 1.125rem;
+}
+
+.homepage .module-stats .card li {
+  width: fit-content !important;
+  float: unset !important;
+}

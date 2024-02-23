@@ -1,0 +1,39 @@
+{% set showcase_index_route = 'showcase_blueprint.index' %}
+{% set search_route = 'dataset.search' %}
+{% set organization_route = 'organization.index' %}
+{% set category_route = 'category.index' %}
+
+{% set stats = h.detroit_data_get_stats() %}
+
+<div class="module-stats">
+  <div class="card box">
+    <h3>{{ _('{site_title} statistics').format(site_title=g.site_title) }}</h3>
+    <ul>
+      <li>
+        <a href="{{ h.url_for(search_route) }}">
+          <strong>{{ h.SI_number_span(stats.dataset_count) }}</strong>
+          {{ ungettext('dataset', 'datasets', stats.dataset_count) }}
+        </a>
+      </li>
+      <li>
+        <a href="{{ h.url_for(organization_route) }}">
+          <strong>{{ h.SI_number_span(stats.organization_count) }}</strong>
+          {{ ungettext('organization', 'organizations', stats.organization_count) }}
+        </a>
+      </li>
+      <li>
+        <a href="{{ h.url_for(category_route) }}">
+          <strong>{{ h.SI_number_span(stats.category_count) }}</strong>
+          {{ ungettext('category', 'categories', stats.group_count) }}
+        </a>
+      </li>
+      <li>
+        <a href="{{ h.url_for(showcase_index_route) }}">
+          <strong>{{ h.SI_number_span(stats.showcase_count) }}</strong>
+          {{ ungettext('showcase', 'showcases', stats.showcase_count) }}
+        </a>
+      </li>
+      
+    </ul>
+  </div>
+</div>
