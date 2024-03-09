@@ -1,6 +1,6 @@
 # ckanext-detroit-data
 
-**TODO:** Put a description of your extension here:  What does it do? What features does it have? Consider including some screenshots or embedding a video!
+The CKAN extension for <https://detroitdata.org>.
 
 ## Requirements
 
