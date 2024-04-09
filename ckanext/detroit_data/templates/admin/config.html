@@ -9,6 +9,7 @@
   <h3>Custom configuration options </h3>
 
   {{ form.input('ckan.featured_orgs', id='field-ckan.featured_orgs', label=_('Featured organizations'), value=data['ckan.featured_orgs'], error=errors['ckan.featured_orgs']) }}
+  {{ form.input('ckan.featured_groups', id='field-ckan.featured_groups', label=_('Featured categories'), value=data['ckan.featured_groups'], error=errors['ckan.featured_groups']) }}
 
   <h4>Promotion area</h4>
 
@@ -25,6 +26,7 @@
   {{ super() }}
 
   <p><strong>Featured organizations:</strong> A list of organization names or IDs separated by space.</p>
+  <p><strong>Featured categories:</strong> A list of category names or IDs separated by space.</p>
 
   <p><strong>Promotion heading:</strong> Text for the promotion area.</p>
   <p><strong>Promotion URL:</strong> A URL for the promotion area. Can either link to an internal or external page.</p>

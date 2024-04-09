@@ -34,6 +34,7 @@ class DetroitDataPlugin(plugins.SingletonPlugin):
 
         schema.update({
             'ckan.featured_orgs': [ignore_missing, remove_whitespace],
+            'ckan.featured_groups': [ignore_missing, remove_whitespace],
             'ckanext.detroit_data.promoted_heading': [ignore_missing, remove_whitespace],
             'ckanext.detroit_data.promoted_url': [ignore_missing, url_validator, remove_whitespace],
             'ckanext.detroit_data.promoted_image_url': [ignore_missing, url_validator, remove_whitespace],

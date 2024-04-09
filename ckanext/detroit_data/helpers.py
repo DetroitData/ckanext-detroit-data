@@ -70,6 +70,18 @@ def detroit_data_get_featured_organizations(count: int = 1) -> list[dict[str, An
     return orgs
 
 
+def detroit_data_get_featured_categories(count: int = 1) -> list[dict[str, Any]]:
+    '''Returns a list of favourite categories in the form
+    of category_list action function
+    '''
+    config_orgs = config.get('ckan.featured_groups')
+    categories = featured_group_org(get_action='group_show',
+                              list_action='group_list',
+                              count=count,
+                              items=as_list(config_orgs))
+    return categories
+
+
 def detroit_data_get_promoted_area():
     '''Returns configuration data for the home page promotion area
     '''
@@ -94,6 +106,7 @@ def detroit_data_get_stats():
 def get_helpers():
     return { 
         'detroit_data_get_featured_organizations': detroit_data_get_featured_organizations,
+        'detroit_data_get_featured_categories': detroit_data_get_featured_categories,
         'detroit_data_get_promoted_area': detroit_data_get_promoted_area,
         'detroit_data_get_stats': detroit_data_get_stats,
         'humanize_entity_type': humanize_entity_type
